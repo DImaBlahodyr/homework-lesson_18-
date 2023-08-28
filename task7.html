@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 7</title>
+    <style>
+      body {
+        background-color: lightgray;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .header {
+        max-width: 1425px;
+        margin: 0 auto;
+        background-color: rgb(31, 199, 131);
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 30px;
+      }
+      .header > p {
+        font-size: 24px;
+      }
+      .content {
+        max-width: 950px;
+        margin: 10px auto;
+        background-color: rgb(31, 199, 131);
+        border-radius: 10px;
+        text-align: center;
+        padding: 5px 0;
+        font-size: 24px;
+      }
+
+      button {
+        text-decoration: none;
+        color: black;
+        background-color: rgb(167, 209, 211);
+        text-align: center;
+        font-size: 18px;
+        padding: 7px 14px;
+        border-radius: 7px;
+      }
+
+      input {
+        text-decoration: none;
+        color: black;
+        background-color: rgb(167, 209, 211);
+        margin: 14px 0px;
+        font-size: 15px;
+        padding: 7px 14px;
+        border-radius: 7px;
+      }
+
+      .btn {
+        max-width: 300px;
+        margin: 30px auto;
+      }
+      .button {
+        display: block;
+        text-decoration: none;
+        color: black;
+        background-color: rgb(31, 199, 131);
+        margin: 15px 25px;
+        text-align: center;
+        font-size: 22px;
+        padding: 10px 20px;
+        border-radius: 7px;
+      }
+      .button:hover {
+        background-color: rgb(63, 112, 210);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div>Задача 7</div>
+      <p>
+        Подорож складається з 3 етапів. На кожному етапі користувач може вибрати
+        один з видів транспорту (авто, автобус, літак - випадаючий список),
+        харчування (сніданок, обід, вечеря – checkbоx) та одного з 3-х гідів
+        (використати - radio buttons). Ціни визначте самі. Підрахувати загальну
+        вартість.
+      </p>
+    </div>
+    <div class="content">
+      <p>Відповідь до задачі:</p>
+      <script>
+        function getTotalPrice() {
+          let sum1 = 0
+          let sum2 = 0
+          const priceTransport = document.querySelectorAll('.transport select')
+          for (const inp of priceTransport) {
+            sum1 += parseFloat(inp.value)
+          }
+          const priceListFoodAndGuid = document.querySelectorAll('.price')
+          for (const inp of priceListFoodAndGuid) {
+            if (inp.checked) sum2 += parseFloat(inp.value)
+          }
+          document.getElementById('result').innerText = sum1 + sum2
+        }
+        window.onload = function () {
+          document.querySelector('button').onclick = getTotalPrice
+        }
+      </script>
+      1й етап
+      <div>
+        <div class="transport">
+          <label
+            >Виберіть тип транспорту:
+            <select>
+              <option value="1000">Авто</option>
+              <option value="500">Автобус</option>
+              <option value="7500">Літак</option>
+            </select>
+          </label>
+        </div>
+
+        <label
+          >Харчування:
+          <label>
+            сніданок
+            <input class="price" type="checkbox" value="200" />
+          </label>
+          <label>
+            обід
+            <input class="price" type="checkbox" value="150" />
+          </label>
+          <label>
+            вечеря
+            <input class="price" type="checkbox" value="250" />
+          </label>
+        </label>
+        <br />
+        <div>
+          Виберіть ГІДа:
+          <label>
+            Андрій
+            <input class="price" type="radio" name="guid1" value="300" />
+          </label>
+          <label>
+            Єгор
+            <input class="price" type="radio" name="guid1" value="270" />
+          </label>
+          <label>
+            Олена
+            <input class="price" type="radio" name="guid1" value="350" />
+          </label>
+        </div>
+      </div>
+      <br />
+      2й етап
+      <div>
+        <div class="transport">
+          <label
+            >Виберіть тип транспорту:
+            <select>
+              <option value="1000">Авто</option>
+              <option value="500">Автобус</option>
+              <option value="7500">Літак</option>
+            </select>
+          </label>
+        </div>
+
+        <label
+          >Харчування:
+          <label>
+            сніданок
+            <input class="price" type="checkbox" value="200" />
+          </label>
+          <label>
+            обід
+            <input class="price" type="checkbox" value="150" />
+          </label>
+          <label>
+            вечеря
+            <input class="price" type="checkbox" value="250" />
+          </label>
+        </label>
+        <br />
+        <div>
+          Виберіть ГІДа:
+          <label>
+            Андрій
+            <input class="price" type="radio" name="guid2" value="300" />
+          </label>
+          <label>
+            Єгор
+            <input class="price" type="radio" name="guid2" value="270" />
+          </label>
+          <label>
+            Олена
+            <input class="price" type="radio" name="guid2" value="350" />
+          </label>
+        </div>
+      </div>
+      <br />
+      3й етап
+      <div>
+        <div class="transport">
+          <label
+            >Виберіть тип транспорту:
+            <select>
+              <option value="1000">Авто</option>
+              <option value="500">Автобус</option>
+              <option value="7500">Літак</option>
+            </select>
+          </label>
+        </div>
+
+        <label
+          >Харчування:
+          <label>
+            сніданок
+            <input class="price" type="checkbox" value="200" />
+          </label>
+          <label>
+            обід
+            <input class="price" type="checkbox" value="150" />
+          </label>
+          <label>
+            вечеря
+            <input class="price" type="checkbox" value="250" />
+          </label>
+        </label>
+        <br />
+        <div>
+          Виберіть ГІДа:
+          <label>
+            Андрій
+            <input class="price" type="radio" name="guid3" value="300" />
+          </label>
+          <label>
+            Єгор
+            <input class="price" type="radio" name="guid3" value="270" />
+          </label>
+          <label>
+            Олена
+            <input class="price" type="radio" name="guid3" value="350" />
+          </label>
+        </div>
+      </div>
+      <div>
+        <button onclick="getTotalPrice()">Розрахувати</button>
+      </div>
+      <div id="result"></div>
+    </div>
+
+    <div class="btn">
+      <a class="button" href="./index.html">На головну</a>
+    </div>
+  </body>
+</html>

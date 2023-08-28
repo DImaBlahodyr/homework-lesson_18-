@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+    <style>
+      body {
+        background-color: lightgray;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .header {
+        max-width: 1425px;
+        margin: 0 auto;
+        background-color: rgb(31, 199, 131);
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 30px;
+      }
+      .header > p {
+        font-size: 24px;
+      }
+      .content {
+        max-width: 950px;
+        margin: 10px auto;
+        background-color: rgb(31, 199, 131);
+        border-radius: 10px;
+        text-align: center;
+        padding: 5px 0;
+        font-size: 24px;
+      }
+
+      button {
+        text-decoration: none;
+        color: black;
+        background-color: rgb(167, 209, 211);
+        text-align: center;
+        font-size: 18px;
+        padding: 7px 14px;
+        border-radius: 7px;
+      }
+
+      input {
+        text-decoration: none;
+        color: black;
+        background-color: rgb(167, 209, 211);
+        margin: 14px 0px;
+        font-size: 15px;
+        padding: 7px 14px;
+        border-radius: 7px;
+      }
+
+      .btn {
+        max-width: 300px;
+        margin: 30px auto;
+      }
+      .button {
+        display: block;
+        text-decoration: none;
+        color: black;
+        background-color: rgb(31, 199, 131);
+        margin: 15px 25px;
+        text-align: center;
+        font-size: 22px;
+        padding: 10px 20px;
+        border-radius: 7px;
+      }
+      .button:hover {
+        background-color: rgb(63, 112, 210);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div>Задача 2</div>
+      <p>Зробити конвертер валют (курси валют – константи у скрипті)</p>
+    </div>
+    <div class="content">
+      <p>Відповідь до задачі:</p>
+      <script>
+        function converterEuro() {
+          const euroRate = 39.89
+          let grn = parseInt(document.getElementById('grn').value)
+          let euro = grn / euroRate
+          document.getElementById('euro').value = euro.toFixed(2)
+        }
+
+        function converterDolar() {
+          const dolarRate = 36.95
+          let grn = parseInt(document.getElementById('grn').value)
+          let dolar = grn / dolarRate
+          document.getElementById('dolar').value = dolar.toFixed(2)
+        }
+      </script>
+      <label>
+        Сума в гривнях
+        <input type="number" id="grn" />
+      </label>
+      <br />
+      <div>
+        <button onclick="converterEuro(), converterDolar()">
+          Конвертувати
+        </button>
+      </div>
+      <label>
+        Сума в євро
+        <input type="number" id="euro" />
+      </label>
+      <br />
+      <label>
+        Сума в доларах
+        <input type="number" id="dolar" />
+      </label>
+      <br />
+    </div>
+
+    <div class="btn">
+      <a class="button" href="./index.html">На головну</a>
+    </div>
+  </body>
+</html>

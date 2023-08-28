@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <style>
+      body {
+        background-color: lightgray;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .header {
+        max-width: 1425px;
+        margin: 0 auto;
+        background-color: rgb(31, 199, 131);
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 30px;
+      }
+      .header > p {
+        font-size: 24px;
+      }
+      .content {
+        max-width: 950px;
+        margin: 10px auto;
+        background-color: rgb(31, 199, 131);
+        border-radius: 10px;
+        text-align: center;
+        padding: 5px 0;
+        font-size: 24px;
+      }
+
+      button {
+        text-decoration: none;
+        color: black;
+        background-color: rgb(167, 209, 211);
+        text-align: center;
+        font-size: 18px;
+        padding: 7px 14px;
+        border-radius: 7px;
+      }
+
+      input {
+        text-decoration: none;
+        color: black;
+        background-color: rgb(167, 209, 211);
+        margin: 14px 0px;
+        font-size: 15px;
+        padding: 7px 14px;
+        border-radius: 7px;
+      }
+
+      .btn {
+        max-width: 300px;
+        margin: 30px auto;
+      }
+      .button {
+        display: block;
+        text-decoration: none;
+        color: black;
+        background-color: rgb(31, 199, 131);
+        margin: 15px 25px;
+        text-align: center;
+        font-size: 22px;
+        padding: 10px 20px;
+        border-radius: 7px;
+      }
+      .button:hover {
+        background-color: rgb(63, 112, 210);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div>Задача 1</div>
+      <p>Розробити калькулятор</p>
+    </div>
+    <div class="content">
+      <p>Відповідь до задачі:</p>
+      <script>
+        function getSum() {
+          let firstNumber = parseInt(document.getElementById('firstNum').value)
+          let secondNumber = parseInt(
+            document.getElementById('secondNum').value
+          )
+          let sum = firstNumber + secondNumber
+          document.getElementById('result').value = sum
+          document.getElementById(
+            'resultValue'
+          ).innerText = `${firstNumber} + ${secondNumber} = ${sum} `
+        }
+
+        function getDiff() {
+          let firstNumber = parseInt(document.getElementById('firstNum').value)
+          let secondNumber = parseInt(
+            document.getElementById('secondNum').value
+          )
+          let difference = firstNumber - secondNumber
+          document.getElementById('result').value = difference
+          document.getElementById(
+            'resultValue'
+          ).innerText = `${firstNumber} - ${secondNumber} = ${difference} `
+        }
+
+        function getProd() {
+          let firstNumber = parseInt(document.getElementById('firstNum').value)
+          let secondNumber = parseInt(
+            document.getElementById('secondNum').value
+          )
+          let product = firstNumber * secondNumber
+          document.getElementById('result').value = product
+          document.getElementById(
+            'resultValue'
+          ).innerText = `${firstNumber} * ${secondNumber} = ${product} `
+        }
+
+        function getFraction() {
+          let firstNumber = parseInt(document.getElementById('firstNum').value)
+          let secondNumber = parseInt(
+            document.getElementById('secondNum').value
+          )
+          let fraction = firstNumber / secondNumber
+          document.getElementById('result').value = fraction
+          document.getElementById(
+            'resultValue'
+          ).innerText = `${firstNumber} - ${secondNumber} = ${fraction} `
+        }
+      </script>
+      <label>
+        Перше число
+        <input id="firstNum" type="number" placeholder="Введіть перше число" />
+      </label>
+      <label>
+        Друге число
+        <input id="secondNum" type="number" placeholder="Введіть друге число" />
+      </label>
+      <br />
+      <br />
+      <div>
+        <button onclick="getSum()">Додати</button>
+        <button onclick="getDiff()">Відняти</button>
+        <button onclick="getProd()">Помножити</button>
+        <button onclick="getFraction()">Поділити</button>
+      </div>
+      <br />
+      <label>
+        Результат
+        <input id="result" type="number" placeholder="Результат" />
+      </label>
+      <div id="resultValue"></div>
+    </div>
+
+    <div class="btn">
+      <a class="button" href="./index.html">На головну</a>
+    </div>
+  </body>
+</html>

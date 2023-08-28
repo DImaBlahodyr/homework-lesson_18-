@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+    <style>
+      body {
+        background-color: lightgray;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .header {
+        max-width: 1425px;
+        margin: 0 auto;
+        background-color: rgb(31, 199, 131);
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 30px;
+      }
+      .header > p {
+        font-size: 24px;
+      }
+      .content {
+        max-width: 1150px;
+        margin: 10px auto;
+        background-color: rgb(31, 199, 131);
+        border-radius: 10px;
+        text-align: center;
+        padding: 5px 0;
+        font-size: 24px;
+      }
+
+      .btn {
+        max-width: 300px;
+        margin: 30px auto;
+      }
+
+      button {
+        text-decoration: none;
+        color: black;
+        background-color: rgb(167, 209, 211);
+        text-align: center;
+        font-size: 18px;
+        padding: 7px 14px;
+        border-radius: 7px;
+      }
+
+      input {
+        text-decoration: none;
+        color: black;
+        background-color: rgb(167, 209, 211);
+        margin: 14px 0px;
+        font-size: 15px;
+        padding: 7px 14px;
+        border-radius: 7px;
+      }
+
+      table,
+      tr,
+      td {
+        border: 1px solid black;
+      }
+
+      .button {
+        display: block;
+        text-decoration: none;
+        color: black;
+        background-color: rgb(31, 199, 131);
+        margin: 15px 25px;
+        text-align: center;
+        font-size: 22px;
+        padding: 10px 20px;
+        border-radius: 7px;
+      }
+      .button:hover {
+        background-color: rgb(63, 112, 210);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div>Задача 5</div>
+      <p>
+        Користувач задає кількість рядків і стовпців. Відобразити таблицю, у
+        клітинках якої знаходяться числа 1, 2, 3, …
+      </p>
+    </div>
+    <div class="content">
+      <p>Відповідь до задачі:</p>
+      <script>
+        function createTable() {
+          let content = 1
+          const rows = parseInt(document.getElementById('rowsNums').value)
+          const cols = parseInt(document.getElementById('colsNums').value)
+          const newTable = document.createElement('table')
+          document.querySelector('.result').append(newTable)
+          for (let row = 0; row < rows; row++) {
+            const createRow = document.createElement('tr')
+            for (let column = 0; column < cols; column++) {
+              const createColumn = document.createElement('td')
+              createColumn.innerText = content
+              createRow.append(createColumn)
+              content++
+            }
+            newTable.append(createRow)
+          }
+        }
+        window.onload = function () {
+          document.getElementById('butn').onclick = createTable
+        }
+      </script>
+      <div>
+        <label
+          >Введіть кількість рядків
+          <input type="number" id="rowsNums" />
+        </label>
+        <label
+          >Введіть кількість стовпців
+          <input type="number" id="colsNums" />
+        </label>
+      </div>
+      <div>
+        <button id="butn">Створити таблицю</button>
+      </div>
+      <div class="result"></div>
+    </div>
+
+    <div class="btn">
+      <a class="button" href="./index.html">На головну</a>
+    </div>
+  </body>
+</html>
